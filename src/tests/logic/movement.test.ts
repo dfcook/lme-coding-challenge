@@ -2,11 +2,11 @@ import { Movement, Orientation } from '../../client/types/grid';
 import { moveRobotOnSurface } from '../../client/logic/movement';
 import { Robot } from '../../client/types/robot';
 
-interface MovementTestCase {
+type MovementTestCase = {
   initial: Robot;
   movements: string;
   expected: Robot;
-}
+};
 
 describe('move', () => {
   const surface = { x: 5, y: 3 };

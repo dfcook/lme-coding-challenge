@@ -1,4 +1,4 @@
-import { lensPath, set, lensProp, contains } from 'ramda';
+import { lensPath, set, lensProp, contains, forEach } from 'ramda';
 import { Movement, Orientation, Surface, GridCoordinate } from './../types/grid';
 import { Robot } from './../types/robot';
 
@@ -58,8 +58,8 @@ const moveRobot = (robot: Robot, movement: Movement): Robot => {
   }
 };
 
-export const fallenOffSurface = (robot: Robot, surface: Surface): boolean =>
-  robot.location.x < 0 || robot.location.y < 0 || robot.location.x > surface.x || robot.location.y > surface.y;
+export const fallenOffSurface = (location: GridCoordinate, surface: Surface): boolean =>
+  location.x < 0 || location.y < 0 || location.x > surface.x || location.y > surface.y;
 
 export const moveRobotOnSurface = (robot: Robot, movement: Movement, surface: Surface): Robot => {
   if (robot.lost) {
@@ -68,7 +68,7 @@ export const moveRobotOnSurface = (robot: Robot, movement: Movement, surface: Su
 
   const moved = moveRobot(robot, movement);
 
-  if (fallenOffSurface(moved, surface)) {
+  if (fallenOffSurface(moved.location, surface)) {
     if (contains(moved.location, scents)) {
       return robot;
     }
