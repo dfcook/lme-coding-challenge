@@ -1,4 +1,4 @@
-import { lensPath, set, lensProp, contains, forEach } from 'ramda';
+import { lensPath, set, lensProp, contains } from 'ramda';
 import { Movement, Orientation, Surface, GridCoordinate } from './../types/grid';
 import { Robot } from './../types/robot';
 

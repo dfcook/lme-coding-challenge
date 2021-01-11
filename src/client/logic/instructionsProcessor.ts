@@ -3,7 +3,7 @@ import { forEach, map } from 'ramda';
 import { parseInput } from './parser';
 import { Robot } from '../types/robot';
 
-export const processInput = (input: string | string[]): Robot[] => {
+export const processInstructions = (input: string | string[]): Robot[] => {
   const initialState = parseInput(input);
 
   return map((r) => {

@@ -3,29 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.0",
     "@types/express": "^4.17.9",
     "@types/jest": "^26.0.20",
     "@types/node": "^12.19.12",
     "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.10",
     "express": "^4.17.1",
+    "formik": "^2.2.6",
     "nodemon": "^2.0.7",
     "ramda": "^0.27.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "ts-node": "^9.1.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.8"
   },
   "scripts": {
     "start": "npm run build && node ./src/server/index.js",
     "start:dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage": "react-scripts test '--coverage' '--watchAll=false'",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "prettify": "prettier --config .prettierrc src/**/*.ts --write",
     "lint": "eslint . --ext .ts"
@@ -49,6 +52,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^7.29.2",
+    "@testing-library/user-event": "^12.6.0",
     "@types/ramda": "^0.27.34",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "eslint": "^7.17.0",

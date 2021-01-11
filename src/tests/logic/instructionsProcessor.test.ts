@@ -1,6 +1,6 @@
-import { processInput } from './../../client/logic/inputProcessor';
+import { processInstructions } from '../../client/logic/instructionsProcessor';
 
-describe('inputProcessor', () => {
+describe('instructionstProcessor', () => {
   test('Successfully processes a defined run', () => {
     const input = `5 3
       1 1 E
@@ -11,7 +11,7 @@ describe('inputProcessor', () => {
       LLFFFLFLFL
     `;
 
-    const movedRobots = processInput(input);
+    const movedRobots = processInstructions(input);
     expect(movedRobots).toStrictEqual([
       { location: { x: 1, y: 1 }, orientation: 'E', lost: false },
       { location: { x: 3, y: 3 }, orientation: 'N', lost: true },

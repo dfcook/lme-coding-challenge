@@ -109,6 +109,24 @@ describe('parser', () => {
   });
 
   describe('parseInput', () => {
+    test('Fails to parse incomplete robot', () => {
+      const input = `5 3
+      1 1 E
+      RFRFRFRF
+      3 2 N
+      FRRFLLFFRRFLL
+      0 3 W
+      `;
+
+      expect(() => parseInput(input)).toThrowError('Robot 3 is missing movements!');
+    });
+
+    test('Fails to parse empty input', () => {
+      const input: string[] = [];
+
+      expect(() => parseInput(input)).toThrowError('Unable to parse input, please check and retry');
+    });
+
     test('Successfully parses complete input string', () => {
       const input = `5 3
       1 1 E
