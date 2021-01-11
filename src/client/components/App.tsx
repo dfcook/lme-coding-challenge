@@ -2,13 +2,15 @@ import { Grid, Paper } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import { FormikHelpers } from 'formik';
 import React, { FunctionComponent, useState } from 'react';
-import { useStyles } from '../hooks/useStyles';
 import { processInstructions } from '../logic/instructionsProcessor';
 import { Robot } from '../types/robot';
 import { AppHeader } from './AppHeader';
 import { Instructions } from './Instructions';
 import { InstructionsForm, InstructionsFormValues } from './InstructionsForm';
 import { MovementOutput } from './MovementOutput';
+
+// This has to be imported last to ensure styles properly applied in production build
+import { useStyles } from '../hooks/useStyles';
 
 const App: FunctionComponent = () => {
   const classes = useStyles();
